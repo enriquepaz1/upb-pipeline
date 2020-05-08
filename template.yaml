@@ -1,15 +1,13 @@
-  
 AWSTemplateFormatVersion : '2010-09-09'
 Transform:
   - AWS::Serverless-2016-10-31
-
 
 Description: my template
 Resources:
   MyLambdaRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: my-lambda-role3
+      RoleName: my-lambda-role5
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -31,14 +29,3 @@ Resources:
             - logs:CreateLogStream
             - logs:PutLogEvents
             Resource: arn:aws:logs:*:*:*
-
-  MyAPI:
-    Type: AWS::Serverless::Api
-    Properties:
-      Name: my-api-gateway
-      StageName: prod
-      DefinitionBody:
-        Fn::Transform:
-          Name: AWS::Include
-          Parameters:
-            Location: swagger.yaml
