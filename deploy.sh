@@ -59,7 +59,7 @@ aws cloudformation deploy \
   --no-fail-on-empty-changeset \
   --template-file $CF_FILE \
   --parameter-overrides Project=cf_lab2  \
-  --stack-name "codepipeline-stack" \
+  --stack-name "upb-pipeline" \
   --capabilities CAPABILITY_NAMED_IAM
 fi
 
